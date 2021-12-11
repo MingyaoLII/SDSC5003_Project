@@ -19,9 +19,12 @@ class MoneyTransferAdmin(admin.ModelAdmin):
     list_display = ('enter_your_user_name', 'enter_the_destination_account_number',
                     'enter_the_amount_to_be_transferred_in_INR')
 
+class LoanAdmin(admin.ModelAdmin):
+    list_display = ('lid', 'amount')
 
 # Register the admin class with the associated model
 admin.site.register(BasicDetails, BasicDetailsAdmin)
 admin.site.register(PresentLocation, PresentLocationAdmin)
 admin.site.register(Status, StatusAdmin)
 admin.site.register(MoneyTransfer, MoneyTransferAdmin)
+admin.site.register(loans, LoanAdmin)
