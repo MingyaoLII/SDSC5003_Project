@@ -7,6 +7,9 @@ class BasicDetailsForm (forms.ModelForm):
         model = models.BasicDetails
         fields = ["name", "sex", "DOB", "annual_income", "email", "mobile", "occupation"]
 
+        widgets = {
+            'sex': forms.Select(attrs={'class':'form-control'}),
+        }
 
 class PresentLocationForm (forms.ModelForm):
     class Meta:

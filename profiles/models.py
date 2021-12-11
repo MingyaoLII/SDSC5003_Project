@@ -4,7 +4,10 @@ import datetime
 class BasicDetails (models.Model):
     # (Name, Sex, DOB, Annual income, Email, Mobile number, Occupation) 
     name = models.CharField(max_length = 50, default = None)
-    sex = models.CharField(max_length = 1, default = None)
+
+    SEX = (('M', 'Male'),('F', 'Female'),)
+
+    sex = models.CharField(max_length = 1,choices=SEX, default = None)
     annual_income = models.IntegerField(default = 0)
     email = models.EmailField(default = None)
     mobile = models.IntegerField(default = 0)
