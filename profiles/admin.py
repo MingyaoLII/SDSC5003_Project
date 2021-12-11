@@ -4,7 +4,7 @@ from .models import *
 
 # Define the admin class
 class BasicDetailsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'mobile')
+    list_display = ('name', 'email', 'mobile', 'user_name')
 
 
 class PresentLocationAdmin(admin.ModelAdmin):
