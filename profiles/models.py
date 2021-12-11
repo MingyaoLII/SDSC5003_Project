@@ -6,7 +6,9 @@ class BasicDetails(models.Model):
     # (Name, Sex, DOB, Annual income, Email, Mobile number, Occupation)
     uid = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, default=None)
-    sex = models.CharField(max_length=1, default=None, help_text='M: Male or F: Female')
+    SEX = (('M', 'Male'),('F', 'Female'),)
+
+    sex = models.CharField(max_length = 1,choices=SEX, default = None)
     annual_income = models.IntegerField(default=0)
     email = models.EmailField(default=None)
     mobile = models.IntegerField(default=0)
