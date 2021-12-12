@@ -40,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CentralBank.urls'
+ROOT_URLCONF = 'CityuBank.urls'
 
 TEMPLATES = [
     {
@@ -58,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CentralBank.wsgi.application'
+WSGI_APPLICATION = 'CityuBank.wsgi.application'
 
 DATABASES = {
     'default': {
