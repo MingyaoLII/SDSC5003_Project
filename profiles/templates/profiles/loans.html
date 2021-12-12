@@ -68,18 +68,14 @@
         <h4 style="font-weight: 300;">It's good to have you here.</h4>   
         <br>   
         
-        <form>
-            <h3 style="font-weight: 300;">
-                What do you need the loan for?
-                <input type="text" class="form-control" id="loan_type" required>
-            </h3>
+        <form action="{ url 'profiles:loans' }" method="post">
+            {% csrf_token %}
+
             <br>
             <h3 style="font-weight: 300;">
-                Enter the amount of loan needed (HKD$)
-                <input type="number" class="form-control" id="loan_amt" required>
+                {{ form }}
             </h3>
-            <small>Please read the <a href="#">Terms and Conditions</a> before requesting for loan</small>. <br>
-            <button class="btn btn-primary" type="button" id="loan_submit">Request loan</button>
+            <button class="btn btn-primary" type = "submit" id="loan_submit">Request loan</button>
         </form>
         
     </section>

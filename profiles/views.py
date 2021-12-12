@@ -4,7 +4,7 @@ from . import models
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
-from profiles.models import Status, MoneyTransfer
+from profiles.models import Status, MoneyTransfer, loans
 import random
 
 
@@ -55,8 +55,14 @@ def money_transfer(request):
     return render(request, "profiles/money_transfer.html", {"form": form})
 
 
-def loan(request):
-    return render(request, "profiles/loans.html")
+def loans(request):
+    if request.method == "POST":
+        form = forms.Loans(request.POST)
+        if form.is_valid():
+            form.save()
+
+    form = forms.Loans()
+    return render(request, "profiles/loans.html", {"form": form})
 
 
 def ewallet(request):

@@ -14,24 +14,24 @@ class BasicDetails(models.Model):
     sex = models.CharField(max_length=1, choices=SEX, default=None)
     annual_income = models.IntegerField(default=0, null=True)
     email = models.EmailField(default=None)
-    mobile = models.CharField('Hong Kong phone number',max_length=8)
+    mobile = models.CharField('Hong Kong phone number', max_length=8)
     occupation = models.CharField(max_length=50, default=None)
-    DOB = models.DateField('Date of birth',default=None)
-    salary = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-    JOB=(('employee','employee'),('manager','manager'))
-    job_title = models.CharField(max_length=150, choices=JOB, null=True)
+    DOB = models.DateField('Date of birth', default=None)
+    salary = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    JOB = (('employee', 'employee'), ('manager', 'manager'))
+    job_title = models.CharField(max_length=150, choices=JOB, null=True, blank=True)
     max_loan_auth = models.DecimalField(max_digits=10, decimal_places=2,
                                         # help_text="The maximum loan authority of the employee",
-                                        null=True)
+                                        null=True, blank=True)
 
     def __str__(self):
-        return self.user_name
+        return str(self.uid)
 
 
 class PresentLocation(models.Model):
     # (Country, State, City, Street, Pincode)
     country = models.CharField(max_length=50, default="China")
-    state = models.CharField(max_length=50)
+    state = models.CharField(max_length=50, help_text='States/Province')
     city = models.CharField(max_length=50)
     street = models.CharField(max_length=50)
     pincode = models.IntegerField()
@@ -54,8 +54,8 @@ class Status(models.Model):
     overdraft_limit_quarterly = models.IntegerField(default=5)
     overdraft_interest_rate = models.DecimalField(default=0.15, max_digits=3, decimal_places=2)
 
-    def __int__(self):
-        return self.account_number
+    def __str__(self):
+        return str(self.account_number)
 
 
 class MoneyTransfer(models.Model):
@@ -67,8 +67,8 @@ class MoneyTransfer(models.Model):
     reciprocal_account_number = models.IntegerField()
     amount = models.DecimalField(max_digits=10, decimal_places=2)
 
-    def __int__(self):
-        return self.transfer_id
+    def __str__(self):
+        return str(self.transfer_id)
 
 
 class branches(models.Model):
