@@ -4,7 +4,7 @@ from .models import *
 
 # Define the admin class
 class BasicDetailsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'mobile', 'user_name')
+    list_display = ('first_name', 'middle_name', 'last_name', 'email', 'mobile', 'user_name')
 
 
 class PresentLocationAdmin(admin.ModelAdmin):
@@ -16,8 +16,16 @@ class StatusAdmin(admin.ModelAdmin):
 
 
 class MoneyTransferAdmin(admin.ModelAdmin):
-    list_display = ('enter_your_user_name', 'enter_the_destination_account_number',
-                    'enter_the_amount_to_be_transferred_in_INR')
+    list_display = ('transfer_id', 'amount', 'account_number',
+                    'reciprocal_user_name', 'reciprocal_account_number',)
+
+
+class LoanAdmin(admin.ModelAdmin):
+    list_display = ('lid', 'amount')
+
+
+class BranchAdmin(admin.ModelAdmin):
+    list_display = ('bid', 'name')
 
 class LoanAdmin(admin.ModelAdmin):
     list_display = ('lid', 'amount')
@@ -27,4 +35,9 @@ admin.site.register(BasicDetails, BasicDetailsAdmin)
 admin.site.register(PresentLocation, PresentLocationAdmin)
 admin.site.register(Status, StatusAdmin)
 admin.site.register(MoneyTransfer, MoneyTransferAdmin)
+<<<<<<< Updated upstream
 admin.site.register(loans, LoanAdmin)
+=======
+admin.site.register(loans, LoanAdmin)
+admin.site.register(branches, BranchAdmin)
+>>>>>>> Stashed changes

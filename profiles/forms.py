@@ -2,30 +2,44 @@ from django import forms
 from . import models
 
 
+<<<<<<< Updated upstream
 class BasicDetailsForm (forms.ModelForm):
+=======
+class BasicDetailsForm(forms.ModelForm):
+>>>>>>> Stashed changes
     # class to store all the model form fields from models.py
     class Meta:
         model = models.BasicDetails
-        fields = ["name", "sex", "DOB", "annual_income", "email", "mobile", "occupation"]
+        fields = ["first_name", "middle_name", "last_name", "sex", "DOB", "annual_income", "email", "mobile", "occupation"]
 
         widgets = {
-            'sex': forms.Select(attrs={'class':'form-control'}),
+            'sex': forms.Select(attrs={'class': 'form-control'}),
         }
 
 
+<<<<<<< Updated upstream
 class PresentLocationForm (forms.ModelForm):
+=======
+class PresentLocationForm(forms.ModelForm):
+>>>>>>> Stashed changes
     class Meta:
         model = models.PresentLocation
         fields = ["country", "state", "city", "street", "pincode"]
 
 
+<<<<<<< Updated upstream
 class MoneyTransferForm (forms.ModelForm):
+=======
+class MoneyTransferForm(forms.ModelForm):
+>>>>>>> Stashed changes
     class Meta:
         model = models.MoneyTransfer
         fields = [
-            "enter_your_user_name",
-            "enter_the_destination_account_number", 
-            "enter_the_amount_to_be_transferred_in_INR"
+            "user_name",
+            "account_number",
+            "reciprocal_user_name",
+            "reciprocal_account_number",
+            "amount",
         ]
 
 
