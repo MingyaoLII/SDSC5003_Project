@@ -6,10 +6,11 @@ class BasicDetailsForm (forms.ModelForm):
     # class to store all the model form fields from models.py
     class Meta:
         model = models.BasicDetails
-        fields = ["first_name", "middle_name", "last_name", "sex", "DOB", "annual_income", "email", "mobile", "occupation"]
+        fields = ["first_name", "middle_name", "last_name", "sex", "DOB", "annual_income", "email", "mobile", "occupation",]
 
         widgets = {
             'sex': forms.Select(attrs={'class': 'form-control'}),
+            # 'job_title':forms.Select(attrs={'class':'form-control'}),
         }
 
 
