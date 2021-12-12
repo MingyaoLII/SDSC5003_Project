@@ -31,7 +31,7 @@ class BasicDetails(models.Model):
 class PresentLocation(models.Model):
     # (Country, State, City, Street, Pincode)
     country = models.CharField(max_length=50, default="China")
-    state = models.CharField(max_length=50, help_text='States/Province')
+    state = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     street = models.CharField(max_length=50)
     pincode = models.IntegerField()

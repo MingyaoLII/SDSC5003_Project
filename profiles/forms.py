@@ -19,6 +19,10 @@ class PresentLocationForm (forms.ModelForm):
         model = models.PresentLocation
         fields = ["country", "state", "city", "street", "pincode"]
 
+        widgets = {
+            'state' :forms.TextInput(attrs={'placeholder':"States/Province"})
+        }
+
 
 class MoneyTransferForm (forms.ModelForm):
     class Meta:
