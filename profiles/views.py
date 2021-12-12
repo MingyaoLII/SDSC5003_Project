@@ -5,12 +5,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from profiles.models import Status, MoneyTransfer, loans
-import random
-
-
-def randomGen():
-    # return a 6 digit random number
-    return int(random.uniform(100000, 999999))
+from .forms import MoneyTransferForm
 
 
 def index(request):
@@ -28,30 +23,29 @@ def index(request):
 
 def money_transfer(request):
     if request.method == "POST":
-        form = forms.MoneyTransferForm(request.POST)
+        form = MoneyTransferForm(request.POST)
         if form.is_valid():
-            form.save()
+            transfer = MoneyTransfer()
+            transfer.user_name = form.cleaned_data['user_name']
+            transfer.account_number = form.cleaned_data['account_number']
+            transfer.reciprocal_user_name = form.cleaned_data['reciprocal_user_name']
+            transfer.reciprocal_account_number = form.cleaned_data['reciprocal_account_number']
+            transfer.amount = form.cleaned_data['amount']
 
-            transfer = models.MoneyTransfer.objects.get(user_name=request.user)
-            reciprocal_user_name = transfer.reciprocal_user_name
-
-            transfer_amount = transfer.amount  # FIELD 1
+            reciprocal_user_name = form.cleaned_data['reciprocal_user_name']
+            transfer_amount = form.cleaned_data['amount']  # FIELD 1
             reciprocal_user = models.Status.objects.get(user_name=reciprocal_user_name)  # FIELD 2
             curr_user = models.Status.objects.get(user_name=request.user)  # FIELD 3
+            # Now transfer the money!
+            curr_user.balance = curr_user.balance - transfer_amount
+            reciprocal_user.balance = reciprocal_user.balance + transfer_amount
 
-            if curr_user.balance >= transfer_amount:
-                # Now transfer the money!
-                curr_user.balance = curr_user.balance - transfer_amount
-                reciprocal_user.balance = reciprocal_user.balance + transfer_amount
-
-                # Save the changes before redirecting
-                transfer.save()
-                reciprocal_user.save()
-                curr_user.save()
-
+            # Save the changes before redirecting
+            transfer.save()
+            reciprocal_user.save()
+            curr_user.save()
         return redirect("profiles/profile.html")
-    else:
-        form = forms.MoneyTransferForm()
+    form = forms.MoneyTransferForm()
     return render(request, "profiles/money_transfer.html", {"form": form})
 
 
