@@ -27,17 +27,15 @@ class LoanAdmin(admin.ModelAdmin):
 class BranchAdmin(admin.ModelAdmin):
     list_display = ('bid', 'name')
 
+
 class LoanAdmin(admin.ModelAdmin):
     list_display = ('lid', 'amount')
+
 
 # Register the admin class with the associated model
 admin.site.register(BasicDetails, BasicDetailsAdmin)
 admin.site.register(PresentLocation, PresentLocationAdmin)
 admin.site.register(Status, StatusAdmin)
 admin.site.register(MoneyTransfer, MoneyTransferAdmin)
-<<<<<<< Updated upstream
-admin.site.register(loans, LoanAdmin)
-=======
 admin.site.register(loans, LoanAdmin)
 admin.site.register(branches, BranchAdmin)
->>>>>>> Stashed changes
