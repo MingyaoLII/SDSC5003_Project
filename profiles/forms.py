@@ -35,6 +35,13 @@ class MoneyTransferForm (forms.ModelForm):
             "reciprocal_account_number",
             "amount",
         ]
+        widgets={
+            'user_name':forms.TextInput(attrs={'style':"height:30px"}),
+            'account_number': forms.TextInput(attrs={'style': "height:30px"}),
+            'reciprocal_user_name': forms.TextInput(attrs={'style': "height:30px"}),
+            'reciprocal_account_number': forms.TextInput(attrs={'style': "height:30px"}),
+            'amount': forms.TextInput(attrs={'style': "height:25px"}),
+        }
 
 
 class Loans (forms.ModelForm):

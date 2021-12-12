@@ -45,7 +45,7 @@
             font-weight: 900;
         }
         .current {
-            border: 1px solid;
+
             padding: 3px;
         }
         .curr_bal {
@@ -79,12 +79,12 @@
         
         <div class="text-center curr_bal"> 
             <h4>ACCOUNT NUMBER</h4> 
-            <h1 id="curr_bal" class="btn-info">{{ curr_user.account_number }}</h1>
+            <h1 id="curr_bal" class="btn-info" style="width: 450px;margin-left: auto;margin-right: auto">{{ curr_user.account_number }}</h1>
         </div>
         <br>
         <div class="text-center curr_bal"> 
             <h4>CURRENT BALACE IN YOUR ACCOUNT</h4> 
-            <h1 id="curr_bal" class="btn-info">HKD${{ curr_user.balance }}</h1>
+            <h1 id="curr_bal" class="btn-info" style="width: 450px;margin-left: auto;margin-right: auto">HKD${{ curr_user.balance }}</h1>
         </div>
         <br>
 
