@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>Central Bank | Profile</title>
+        <title>CityU Bank | Profile</title>
         
         <!-- CSS FRAMEWORKS REQUIRED -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -21,27 +21,28 @@
     </head>
     
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: goldenrod">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: floralwhite">
             <img src="/static/images/768px-CityU_logo.jpg" width="50px">
-            <a class="navbar-brand"> CityU Bank</a>
+            <a class="navbar-brand" > CityU Bank</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+                    <b><a class="nav-item nav-link" href="{% url 'home' %}" style="color:black">Home <span class="sr-only">(current)</span></a></b>
+                    <b><a class="nav-item nav-link" href="{% url 'accounts:logout' %}" style="color:black">Logout</a></b>
                 </div>
             </div>
         </nav>
         
-        <br> <br> <br>
+        <br> <br>
+        <div style="background-color: blue;height: 11px"><br></div>
        
         <div class="container-fluid row">
         
                 <!--SIDE PANEL BEGINS -->
-                <section id="side_panel" class="col-3">
-                    <img src="/static/images/768px-CityU_logo.jpg" class="container btn" alt="">
+                <section id="side_panel" class="col-3" style="margin: 0px;height: auto">
+                    <img src="/static/images/768px-CityU_logo.jpg" class="container btn" style="margin: auto">
                     <!-- OPERATIONS -->
                     <a href="{% url 'profiles:account_status' %}" class="current side" id="status">Account status</a> <br> <br>
                     
@@ -69,7 +70,7 @@
         <!-- FOOTER -->
         <section class="foot">
             <div class="text-center">
-                &copy; Website created with <i class="fa fa-heart" style="color: green"></i> by <a href="https://github.com/rafi007akhtar" target="_blank">Md Rafi Akhtar</a>
+                &copy; Website created with <i class="fa fa-heart" style="color: green"></i> by <a href="https://github.com/hiiragimei/HomeRun" target="_blank">Home Run</a>
                 <br>
                 <i class="fa fa-github"></i> Contribute to this project on <a href="https://github.com/rafi007akhtar/BankingProject" target="_blank">GitHub</a>
             </div>

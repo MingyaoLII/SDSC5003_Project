@@ -64,7 +64,7 @@
 
 {% block bodycontent %}
     <section id="welcome_post" class="col-9">
-        <h2>Welcome, <span id="prof_name">Rafi.</span> </h2>
+        <h2>Welcome, <span id="prof_name">{{ user }}.</span> </h2>
         <h4 style="font-weight: 300;">It's good to have you here.</h4>   
         <br>   
         
@@ -75,7 +75,7 @@
             </h3>
             <br>
             <h3 style="font-weight: 300;">
-                Enter the amount of loan needed (₹)
+                Enter the amount of loan needed (HKD$)
                 <input type="number" class="form-control" id="loan_amt" required>
             </h3>
             <small>Please read the <a href="#">Terms and Conditions</a> before requesting for loan</small>. <br>

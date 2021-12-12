@@ -6,6 +6,7 @@
         
         body {
             background-color: floralwhite;
+
         }
         h2 {
             font-family: "PT Serif";
@@ -71,7 +72,7 @@
 
 {% block bodycontent %}
 
-    <section id="welcome_post" class="col-9">
+    <section id="welcome_post" class="col-9" >
         <h2>Welcome, <span id="prof_name">{{ user }}.</span> </h2>
         <h4 style="font-weight: 300;">It's good to have you here.</h4>   
         <br>
@@ -83,13 +84,10 @@
         <br>
         <div class="text-center curr_bal"> 
             <h4>CURRENT BALACE IN YOUR ACCOUNT</h4> 
-            <h1 id="curr_bal" class="btn-info">₹ {{ curr_user.balance }}</h1> 
+            <h1 id="curr_bal" class="btn-info">HKD${{ curr_user.balance }}</h1>
         </div>
         <br>
-        <div class="text-center curr_bal"> 
-            <h4>ACCOUNT TYPE</h4> 
-            <h1 id="curr_bal" class="btn-info">SAVINGS</h1>
-        </div>
+
         
     </section>
 
