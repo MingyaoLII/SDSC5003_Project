@@ -1,3 +1,4 @@
+from django.http import QueryDict
 from django.shortcuts import render, redirect
 from . import forms
 from . import models
@@ -51,11 +52,18 @@ def money_transfer(request):
 
 def loans(request):
     if request.method == "POST":
+        curr_user = models.BasicDetails.objects.get(user_name = request.user)
+        print('request post', request.POST)
+        #eceive_dict = QueryDict.copy(request.POST)
+        #receive_dict['customer_id'] = '1'
+        #print('receive dict', receive_dict)
         form = forms.Loans(request.POST)
         if form.is_valid():
-            form.save()
-
+            post = form.save(commit=False)
+            post.customer_id = curr_user
+            post.save()
     form = forms.Loans()
+    #print('form ', form)
     return render(request, "profiles/loans.html", {"form": form})
 
 

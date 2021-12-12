@@ -44,4 +44,4 @@ class MoneyTransferForm(forms.ModelForm):
 class Loans(forms.ModelForm):
     class Meta:
         model = models.loans
-        fields = ['customer_id', 'amount', 'loan_type', 'interest_rate', 'date_issue', 'due_date', 'branch_id']
+        fields = ['amount', 'loan_type', 'interest_rate', 'date_issue', 'due_date', 'branch_id']
