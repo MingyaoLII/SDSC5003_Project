@@ -11,6 +11,7 @@ class BasicDetailsForm (forms.ModelForm):
         widgets = {
             'sex': forms.Select(attrs={'class': 'form-control'}),
             # 'job_title':forms.Select(attrs={'class':'form-control'}),
+            'DOB': forms.DateInput({'class':'datepicker'})
         }
 
 
