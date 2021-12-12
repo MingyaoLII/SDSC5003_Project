@@ -4,7 +4,7 @@ from .models import *
 
 # Define the admin class
 class BasicDetailsAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'middle_name', 'last_name', 'sex', 'email', 'mobile', 'user_name')
+    list_display = ('uid', 'first_name', 'middle_name', 'last_name', 'sex', 'email', 'mobile', 'user_name')
     ordering = ('uid', 'first_name', 'middle_name', 'last_name')
 
 

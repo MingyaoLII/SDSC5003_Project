@@ -27,8 +27,9 @@ def money_transfer(request):
         form = MoneyTransferForm(request.POST)
         if form.is_valid():
             transfer = MoneyTransfer()
-            transfer.user_name = form.cleaned_data['user_name']
-            transfer.account_number = form.cleaned_data['account_number']
+            transfer.user_name = request.user.username
+            temp = Status.objects.filter(user_name=request.user.username)
+            transfer.account_number = temp.values("account_number")
             transfer.reciprocal_user_name = form.cleaned_data['reciprocal_user_name']
             transfer.reciprocal_account_number = form.cleaned_data['reciprocal_account_number']
             transfer.amount = form.cleaned_data['amount']
