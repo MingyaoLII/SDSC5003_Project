@@ -14,12 +14,12 @@ class PresentLocationAdmin(admin.ModelAdmin):
 
 
 class StatusAdmin(admin.ModelAdmin):
-    list_display = ('account_number', 'balance', 'user_name')
+    list_display = ('account_number', 'balance', 'user_name', 'interest_rate')
     ordering = ['account_number']
 
 
 class MoneyTransferAdmin(admin.ModelAdmin):
-    list_display = ('transfer_id', 'amount', 'reciprocal_user_name',
+    list_display = ('transfer_id', 'amount', 'user_name', 'reciprocal_user_name',
                     'reciprocal_account_number', 'datetime')
     ordering = ['transfer_id']
 

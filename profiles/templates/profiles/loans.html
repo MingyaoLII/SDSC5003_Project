@@ -75,9 +75,9 @@
             <h3 style="font-weight: 300;">
                 {{ form }}
             </h3>
+            <small>By committing a loan to your account, you agree to the <a href="#">Terms and Conditions</a> of loan</small>. <br>
             <button class="btn btn-primary" type = "submit" id="loan_submit">Request loan</button>
         </form>
-        
     </section>
 {% endblock %}         
 
@@ -86,8 +86,11 @@
         $(".current").removeClass("current");
         $("#loan").addClass("current");
 
+        $("input").addClass("form-control");
+        $("label").prepend("<br>")
+
         $("#loan_submit").click(function() {
-            var msg = "Your loan has been requested. You'll be notified if it gets approved in 24 hours. Press OK."
+            var msg = "Your loan has been requested. You'll be notified if it gets approved in 24 hours. Please press OK."
             
             if(
                 $("#loan_type").val() =="" || 

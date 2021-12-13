@@ -61,7 +61,8 @@
         }
     </style>
 {% endblock %}
-        
+
+
 {% block bodycontent %}
     <section id="welcome_post" class="col-9">
         <h2>Welcome, <span id="prof_name">{{ user }}.</span> </h2>
@@ -87,5 +88,12 @@
 
         $("input").addClass("form-control");
         $("label").prepend("<br>")
+
+        $("#transfer_submit").click(function() {
+            var msg = "Your money transfer has been requested. You'll be notified if it gets approved in 24 hours. Press OK."
+
+            alert(msg);
+        });
+
     </script>
 {% endblock %}

@@ -6,23 +6,21 @@ import datetime
 class BasicDetails(models.Model):
     # (Name, Sex, DOB, Annual income, Email, Mobile number, Occupation)
     uid = models.AutoField(primary_key=True)
-    user_name = models.CharField(max_length=150, default=None)
-    first_name = models.CharField(max_length=50, default=None)
-    middle_name = models.CharField(max_length=50, default=None, null=True)
-    last_name = models.CharField(max_length=50, default=None)
+    user_name = models.CharField(max_length=150)
+    first_name = models.CharField(max_length=50)
+    middle_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50)
     SEX = (('M', 'Male'), ('F', 'Female'),)
-    sex = models.CharField(max_length=1, choices=SEX, default=None)
-    annual_income = models.IntegerField(default=0, null=True)
-    email = models.EmailField(default=None)
+    sex = models.CharField(max_length=1, choices=SEX)
+    annual_income = models.IntegerField(default=0, null=True, blank=True)
+    email = models.EmailField()
     mobile = models.CharField('Hong Kong phone number', max_length=8)
-    occupation = models.CharField(max_length=50, default=None)
-    DOB = models.DateField('Date of birth', default=None)
-    salary = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-    JOB = (('employee', 'employee'), ('manager', 'manager'))
-    job_title = models.CharField(max_length=150, choices=JOB, null=True)
-    max_loan_auth = models.DecimalField(max_digits=10, decimal_places=2,
-                                        # help_text="The maximum loan authority of the employee",
-                                        null=True)
+    occupation = models.CharField(max_length=50)
+    DOB = models.DateField('Date of birth')
+    salary = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    JOB = (('E', 'employee'), ('M', 'manager'))
+    job_title = models.CharField(max_length=150, choices=JOB, null=True,  blank=True)
+    max_loan_auth = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
     def __str__(self):
         return str(self.uid)
@@ -30,7 +28,7 @@ class BasicDetails(models.Model):
 
 class PresentLocation(models.Model):
     # (Country, State, City, Street, Pincode)
-    country = models.CharField(max_length=50, default="China")
+    country = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     street = models.CharField(max_length=50)
@@ -78,7 +76,7 @@ class branches(models.Model):
     phone_num = models.CharField(max_length=8, help_text="HongKong Phone number")
 
     def __str__(self):
-        return self.name
+        return str(self.bid)
 
 
 def six_month_after():
@@ -96,5 +94,5 @@ class loans(models.Model):
     customer_id = models.ForeignKey(BasicDetails, on_delete=models.DO_NOTHING)
     branch_id = models.ForeignKey(branches, on_delete=models.DO_NOTHING)
 
-    def __int__(self):
-        return self.lid
+    def __str__(self):
+        return str(self.lid)

@@ -7,6 +7,11 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from profiles.models import Status, MoneyTransfer, loans
 from .forms import MoneyTransferForm
+from django.contrib import messages
+
+
+def toast(request):
+    messages.success(request, "Success!")
 
 
 def index(request):
@@ -53,18 +58,18 @@ def money_transfer(request):
 
 def loans(request):
     if request.method == "POST":
-        curr_user = models.BasicDetails.objects.get(user_name = request.user)
+        curr_user = models.BasicDetails.objects.get(user_name=request.user)
         print('request post', request.POST)
-        #eceive_dict = QueryDict.copy(request.POST)
-        #receive_dict['customer_id'] = '1'
-        #print('receive dict', receive_dict)
+        # eceive_dict = QueryDict.copy(request.POST)
+        # receive_dict['customer_id'] = '1'
+        # print('receive dict', receive_dict)
         form = forms.Loans(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.customer_id = curr_user
             post.save()
     form = forms.Loans()
-    #print('form ', form)
+    # print('form ', form)
     return render(request, "profiles/loans.html", {"form": form})
 
 
