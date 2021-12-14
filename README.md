@@ -5,7 +5,7 @@ This is a DBMS Project for course 5003 by team **HomeRun**.
 
 This web application creates a banking web-app for a fictitious bank named CityU bank.
 
-###Features
+### Features
 
 * create a new user and get a unique account
 * edit and store your personal information
