@@ -65,14 +65,14 @@
 {% block bodycontent %}
     <section id="welcome_post" class="col-9">
         <h2>Welcome, <span id="prof_name">{{ user }}.</span> </h2>
-        <h4 style="font-weight: 300;">It's good to have you here.</h4>   
-        <br>   
+        <h4 style="font-weight: 200;">It's good to have you here.</h4>
+
         
         <form action="{ url 'profiles:loans' }" method="post">
             {% csrf_token %}
 
             <br>
-            <h3 style="font-weight: 300;">
+            <h3 style="font-weight: 200;">
                 {{ form }}
             </h3>
             <small>By committing a loan to your account, you agree to the <a href="#">Terms and Conditions</a> of loan</small>. <br>

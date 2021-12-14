@@ -41,3 +41,7 @@ class Loans(forms.ModelForm):
     class Meta:
         model = models.loans
         fields = ['amount', 'loan_type', 'interest_rate', 'date_issue', 'due_date', 'branch_id']
+        widgets={
+            'loan_type':forms.Select(attrs={'class':'form-control'}),
+            'branch_id':forms.Select(attrs={'class':'form-control'})
+        }
