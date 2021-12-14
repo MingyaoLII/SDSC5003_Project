@@ -45,11 +45,11 @@ Assuming you have Python setup, run the following commands in root directory **H
 
 There are some users created for test.
 
-###Superuser
+### Superuser
 Username: admin \
 Password: admin
 
-###Other users
+### Other users
 Password: sdsc5003
 
 ## Disclaimer
