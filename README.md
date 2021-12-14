@@ -27,7 +27,7 @@ Assuming you have Python setup, run the following commands in root directory **H
 
    ```
    pip3 install -r requirements.txt
-   python3 manage.py runserver
+   py -3 manage.py runserver
    ```
 
 1. Open a browser to `http://127.0.0.1:8000` to see the main site.
@@ -38,7 +38,7 @@ Assuming you have Python setup, run the following commands in root directory **H
    ```
    pip3 install -r requirements.txt
    py -3 manage.py createsuperuser
-   python3 manage.py runserver
+   py -3 manage.py runserver
    ```
 
 ## Users Info
