@@ -5,7 +5,7 @@ This is a DBMS Project for course 5003 by team **HomeRun**.
 
 This web application creates a banking web-app for a fictitious bank named CityU bank.
 
-### Features
+## Features
 
 * create a new user and get a unique account
 * edit and store your personal information
@@ -16,18 +16,17 @@ This web application creates a banking web-app for a fictitious bank named CityU
 
 ## Prerequisites
 
-1. A Terminal
-2. Python 3.4 or above setup.
-3. Django framework 2.0 or above installed.
+* A Terminal
+* Python 3.4
+* Django framework 2.0
 
 ## Quick Start
 
-Assuming you have Python setup, run the following commands in root directory **HomeRun** \
-(if you're on Windows you may use `python` or `python3` instead of `py -3` to start Python):
+Assuming you have Python setup, run the following commands in root directory `/HomeRun`.
 
    ```
    pip3 install -r requirements.txt
-   py -3 manage.py runserver
+   pyhon3 manage.py runserver
    ```
 
 1. Open a browser to `http://127.0.0.1:8000` to see the main site.
@@ -37,8 +36,8 @@ Assuming you have Python setup, run the following commands in root directory **H
 
    ```
    pip3 install -r requirements.txt
-   py -3 manage.py createsuperuser
-   py -3 manage.py runserver
+   python3 manage.py createsuperuser
+   python3 manage.py runserver
    ```
 
 ## Users Info
