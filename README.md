@@ -1,5 +1,6 @@
 # CityU Bank
-This is a DBMS Project for course 5003 by team **HomeRun**.
+
+This is a DBMS Project for course SDSC5003 by team **HomeRun**.
 
 ## Overview
 
@@ -11,6 +12,8 @@ This web application creates a banking web-app for a fictitious bank named CityU
 * edit and store your personal information
 * transfer money from your account to another
 * apply for loans (to be confirmed by issuing branch)
+
+## ER Diagram
 
 ![CityU Bank Model](https://raw.githubusercontent.com/hiiragimei/HomeRun/main/static/images/Banking%20DBMS.jpg)
 
@@ -24,21 +27,21 @@ This web application creates a banking web-app for a fictitious bank named CityU
 
 Assuming you have Python setup, run the following commands in root directory `/HomeRun`.
 
-   ```
-   pip3 install -r requirements.txt
-   pyhon3 manage.py runserver
-   ```
+```
+pip3 install -r requirements.txt
+pyhon3 manage.py runserver
+```
 
 1. Open a browser to `http://127.0.0.1:8000` to see the main site.
 2. Open tab to `http://127.0.0.1:8000/admin/` to open the admin site.
 
 *If cannot login to the admin site with password below, run the following commands*
 
-   ```
-   pip3 install -r requirements.txt
-   python3 manage.py createsuperuser
-   python3 manage.py runserver
-   ```
+```sh
+pip3 install -r requirements.txt
+python3 manage.py createsuperuser
+python3 manage.py runserver
+```
 
 ## Users Info
 
