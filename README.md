@@ -19,7 +19,6 @@ This web application creates a banking web-app for a fictitious bank named CityU
 
 ## Prerequisites
 
-* A Terminal
 * Python 3.4
 * Django framework 2.0
 
