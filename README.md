@@ -17,7 +17,7 @@ This web application creates a web-app for a fictitious bank named **CityU bank*
 
 ![CityU Bank Model](https://raw.githubusercontent.com/hiiragimei/HomeRun/main/static/images/Banking%20DBMS.jpg)
 
-## Prerequisites
+## Requrement
 
 * Python 3.4
 * Django framework 2.0
