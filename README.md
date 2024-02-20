@@ -4,7 +4,7 @@ This is a DBMS Project for course SDSC5003 by team **HomeRun**.
 
 ## Overview
 
-This web application creates a banking web-app for a fictitious bank named CityU bank.
+This web application creates a web-app for a fictitious bank named **CityU bank**.
 
 ## Features
 
