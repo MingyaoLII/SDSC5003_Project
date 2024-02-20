@@ -10,7 +10,7 @@ This web application creates a web-app for a fictitious bank named **CityU bank*
 
 * create a new user and get a unique account
 * edit and store your personal information
-* transfer money from your account to another
+* transfer money from your account to other's 
 * apply for loans (to be confirmed by issuing branch)
 
 ## ER Diagram
