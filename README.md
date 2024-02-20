@@ -34,7 +34,7 @@ pyhon3 manage.py runserver
 1. Open a browser to `http://127.0.0.1:8000` to see the main site.
 2. Open tab to `http://127.0.0.1:8000/admin/` to open the admin site.
 
-*If cannot login to the admin site with password below, run the following commands*
+*or run the following commands*
 
 ```sh
 pip3 install -r requirements.txt
