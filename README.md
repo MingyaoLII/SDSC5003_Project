@@ -19,12 +19,12 @@ This web application creates a web-app for a fictitious bank named **CityU bank*
 
 ## Requrement
 
-* Python 3.4
-* Django framework 2.0
+    Python 3.4
+    Django framework 2.0
 
 ## Quick Start
 
-Assuming you have Python setup, run the following commands in root directory `/HomeRun`.
+Run the following commands in root directory `/HomeRun`.
 
 ```
 pip3 install -r requirements.txt
